@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
+import { Notification } from "./Notification/Notification.jsx";
+
 export class App extends Component {
   constructor() {
     super();
