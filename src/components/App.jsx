@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
 import { Notification } from "./Notification/Notification.jsx";
+import { Section } from "./Section/Section.jsx";
+import { Statistics } from "./Statistics/Statistics.jsx";
 
 export class App extends Component {
   constructor() {
@@ -9,7 +11,7 @@ export class App extends Component {
     this.state = {
       good: 0,
       neutral: 0,
-      bad: 0
+      bad: 0,
     };
   }
 
@@ -21,13 +23,13 @@ export class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
-  handleLeaveFeedBack = event => {
+  handleLeaveFeedback = event => {
     const { name } = event.target;
     this.setState(state => ({ [name]: state[name] + 1 }));
   };
 
   render() {
-     const { good, neutral, bad } = this.state;
+    const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positiveFeedback = this.countPositiveFeedbackPercentage();
     return (
