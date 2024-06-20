@@ -1,15 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
-import { Notification } from "./Notification/Notification.jsx";
-import { Section } from "./Section/Section.jsx";
-import { Statistics } from "./Statistics/Statistics.jsx";
+
+import { Statistics } from './Statistics/Statistics.jsx';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.jsx';
+import { Notification } from './Notification/Notification.jsx'; 
+import { Section } from './Section/Section.jsx'; 
 
 export class App extends Component {
   constructor() {
     super();
     this.state = {
-      good: 0,
+      good:0,
       neutral: 0,
       bad: 0,
     };
@@ -24,8 +25,8 @@ export class App extends Component {
   };
 
   handleLeaveFeedback = event => {
-    const { name } = event.target;
-    this.setState(state => ({ [name]: state[name] + 1 }));
+   const {name} = event.target;
+   this.setState(state => ({ [name]: state[name] + 1 }));
   };
 
   render() {
